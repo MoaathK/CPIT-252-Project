@@ -23,5 +23,5 @@ public class ProcessingState implements OrderState{
         System.out.println("Order Processing cancelled");
         context.setState(new CancelledState());
     }
-    
+
 }
