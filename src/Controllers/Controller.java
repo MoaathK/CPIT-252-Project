@@ -81,7 +81,7 @@ public class Controller {
                 }
             }
             System.out.println("Want to see the User menu again? (Y/N)");
-            String answer = input.next();
+            String answer = input.nextLine();
             if (answer.equalsIgnoreCase("n")){
                 flag = false;
             }
@@ -119,7 +119,7 @@ public class Controller {
                 }
             }
             System.out.println("Want to see the Admin menu again? (Y/N)");
-            String answer = input.next();
+            String answer = input.nextLine();
             if (answer.equalsIgnoreCase("N")){
                 flag = false;
             }

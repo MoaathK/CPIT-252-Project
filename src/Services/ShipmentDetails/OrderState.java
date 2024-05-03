@@ -5,5 +5,6 @@ public interface OrderState {
     void shipOrder(OrderContext context);
     void deliverOrder(OrderContext context);
     void cancelOrder(OrderContext context);
+    String status();
 
 }

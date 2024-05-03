@@ -21,4 +21,9 @@ public class ShippedState implements OrderState{
     public void cancelOrder(OrderContext context) {
         System.out.println("Cannot cancel, order is already shipped.");
     }
+
+    @Override
+    public String status() {
+        return " Shipped";
+    }
 }

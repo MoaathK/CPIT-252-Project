@@ -20,4 +20,9 @@ public class DeliveredState implements OrderState{
     public void cancelOrder(OrderContext context) {
         System.out.println("Cannot cancel, order has already been delivered ");
     }
+
+    @Override
+    public String status() {
+        return "Delivered";
+    }
 }

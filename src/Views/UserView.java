@@ -72,6 +72,7 @@ public class UserView {
             if ( shipment.getId().equalsIgnoreCase( id ) ) {
 
                 System.out.println(shipment.toString());
+                System.out.println(shipment.context.getState());
                 System.out.println("Shipment State"); //here we connect to the state pattern to get the shipment state
                 return;
             }

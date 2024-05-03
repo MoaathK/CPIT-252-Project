@@ -24,4 +24,9 @@ public class ProcessingState implements OrderState{
         context.setState(new CancelledState());
     }
 
+    @Override
+    public String status() {
+        return " Processing";
+    }
+
 }

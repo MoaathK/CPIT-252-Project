@@ -1,18 +1,23 @@
 package Model;
 
 
+import Services.ShipmentDetails.OrderContext;
+import Services.ShipmentDetails.ProcessingState;
+
 import java.util.UUID;
 
 public class Shipment {
+    private static int lastId = 0;
     private String id;
     private String origin;
     private String destination;
     private String carrier;
     private double weight;
-
+    public OrderContext context;
 
     public Shipment( ) {
-        this.id = UUID.randomUUID().toString();
+        this.id = String.valueOf(++lastId);
+        context = new OrderContext();
     }
 
     public String getId() {
@@ -64,7 +69,7 @@ public class Shipment {
                 ", destination='" + destination + '\'' +
                 ", carrier='" + carrier + '\'' +
                 ", weight=" + weight +
-                '}';
+                ", Shipment status= "+context.getState().status()+ '}';
     }
 }
 

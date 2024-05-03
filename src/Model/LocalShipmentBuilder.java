@@ -1,9 +1,14 @@
 package Model;
 
+import Services.ShipmentDetails.OrderContext;
+import Services.ShipmentDetails.OrderState;
+
 public class LocalShipmentBuilder implements ShipmentBuilder{
     private  Shipment shipment;
+    private OrderContext context;
     public LocalShipmentBuilder() {
         this.shipment = new Shipment();
+        this.context = new OrderContext();
     }
 
     @Override

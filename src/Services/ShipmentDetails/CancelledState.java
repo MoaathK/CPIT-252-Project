@@ -20,4 +20,7 @@ public class CancelledState implements OrderState{
     public void cancelOrder(OrderContext context) {
         System.out.println("Order is already cancelled. ");
     }
+    public String status(){
+        return "Cancelled";
+    }
 }
