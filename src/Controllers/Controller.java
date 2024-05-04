@@ -69,7 +69,7 @@ public class Controller {
                     break;
                 }
                 case 3:{
-                    view1.searchShipments(shipments);
+                    view1.searchShipments(shipmentManager);
                     break;
                 }
                 case 4:{

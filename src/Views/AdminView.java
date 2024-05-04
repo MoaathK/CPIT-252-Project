@@ -35,7 +35,7 @@ public class AdminView {
                     shipmentManager.displayAllShipments();
                     break;
                 case 2:
-                    addNewShipment();  // To be implemented
+                    addNewShipment();
                     break;
                 case 3:
                     removeShipment();
@@ -69,43 +69,6 @@ public class AdminView {
     }
 
 
-    /*public void updateShipmentStatus(ShipmentManager shipments) {
-        System.out.println("what is the ID for the shipment you want to update?");
-        String id = input.nextLine();
-
-        *//*for (ShipmentManager shipment : shipments) {
-            if (shipment.getId().equalsIgnoreCase(id)) {
-                while (true) {
-                    System.out.println("What type of Update do you want ?\n" +
-                            "- Shipped. \n" +
-                            "- Delivered. \n" +
-                            "- Cancelled. ");
-                    String type = input.nextLine();
-                    if (type.equalsIgnoreCase("Shipped")) {
-                        //shipment.context.setState(new ShippedState());
-                        shipment.context.shipOrder();
-
-                        return;
-                    } else if (type.equalsIgnoreCase("Delivered")) {
-                        shipment.context.deliverOrder();
-                        //shipment.context.setState(new DeliveredState());
-                        ;
-                        return;
-                    } else if (type.equalsIgnoreCase("Cancelled")) {
-                        //shipment.context.setState(new CancelledState());
-                        shipment.context.cancelOrder();
-
-                        return;
-                    } else {
-                        System.out.println("Invalid type, please try again.");
-                    }
-                }
-            }
-
-        }
-        System.out.println("Invalid id ");*//*
-
-    }*/
     public void updateShipmentStatus(ShipmentManager shipments) {
         System.out.println("What is the ID for the shipment you want to update?");
         String id = input.nextLine();
@@ -120,16 +83,13 @@ public class AdminView {
                 String type = input.nextLine();
                 switch (type.toLowerCase()) {
                     case "shipped":
-                        shipment.getContext().shipOrder(); // Assuming getContext() returns the context
-                        System.out.println("Shipment status updated to shipped.");
+                        shipment.getContext().shipOrder();
                         return;
                     case "delivered":
                         shipment.getContext().deliverOrder();
-                        System.out.println("Shipment status updated to delivered.");
                         return;
                     case "cancelled":
                         shipment.getContext().cancelOrder();
-                        System.out.println("Shipment status updated to cancelled.");
                         return;
                     default:
                         System.out.println("Invalid type, please try again.");

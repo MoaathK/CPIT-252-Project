@@ -21,10 +21,6 @@ public class Shipment {
     public String getId() {
         return id;
     }
-
-    public void setId(String id) {
-        this.id = id;
-    }
     public double getWeight() {
         return weight;
     }
@@ -59,15 +55,5 @@ public class Shipment {
         this.carrier = carrier;
     }
 
-    @Override
-    public String toString() {
-        return "Shipment Info {" +
-                "id No='" + id + '\'' +
-                ", origin='" + origin + '\'' +
-                ", destination='" + destination + '\'' +
-                ", carrier='" + carrier + '\'' +
-                ", weight=" + weight +
-                ", Shipment status= "+context.getState().status()+ '}';
-    }
 }
 

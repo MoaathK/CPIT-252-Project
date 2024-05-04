@@ -9,4 +9,5 @@ public interface ShipmentComponent {
     boolean matchesSearchCriteria(String criteria, String value);
     String getId();
     OrderContext getContext();
+    boolean matchesId(String id);
 }

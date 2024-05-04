@@ -48,11 +48,19 @@ public class GroupedShipment implements ShipmentComponent{
 
     @Override
     public String getId() {
-        return "";
+        return this.id;
     }
 
     @Override
     public OrderContext getContext() {
         return null;
+    }
+
+    @Override
+    public boolean matchesId(String id) {
+        if (this.id != null && this.id.equalsIgnoreCase(id)) {
+            return true;
+        }
+        return shipments.stream().anyMatch(shipment -> shipment.matchesId(id));
     }
 }

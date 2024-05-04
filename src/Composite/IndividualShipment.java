@@ -31,18 +31,21 @@ public class IndividualShipment extends Shipment implements ShipmentComponent{
 
     @Override
     public boolean matchesSearchCriteria(String criteria, String value) {
-        switch (criteria.toLowerCase()) {
-            case "id":
-                return this.getId().equals(value);
-            case "origin":
-                return this.getOrigin().equalsIgnoreCase(value);
-            case "destination":
-                return this.getDestination().equalsIgnoreCase(value);
-            case "carrier":
-                return this.getCarrier().equalsIgnoreCase(value);
-            default:
-                return false;
+
+        if (criteria.equalsIgnoreCase("id")) {
+            return this.getId().equalsIgnoreCase(value);
         }
+        else if (criteria.equalsIgnoreCase("origin")) {
+            return this.getOrigin().equalsIgnoreCase(value);
+        }
+        else if (criteria.equalsIgnoreCase("destination")) {
+            return this.getDestination().equalsIgnoreCase(value);
+        }
+        else if (criteria.equalsIgnoreCase("carrier")) {
+            return this.getCarrier().equalsIgnoreCase(value);
+        }
+        return false;
+
     }
 
     @Override
@@ -50,14 +53,9 @@ public class IndividualShipment extends Shipment implements ShipmentComponent{
         return context;
     }
 
-
-    public void printShipmentDetails(){
-        System.out.println("Individual Shipment - Origin: " + getOrigin());
-        System.out.println("Individual Shipment - Destination: " + getDestination());
-        System.out.println("Individual Shipment - Weight: " + getWeight());
-        System.out.println("Individual Shipment - Carrier: " + getCarrier());
-        System.out.println("Individual Shipment - Total Weight: " + getWeight());
-
+    @Override
+    public boolean matchesId(String id) {
+        return this.getId().equalsIgnoreCase(id);
     }
 
 }

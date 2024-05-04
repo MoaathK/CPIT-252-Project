@@ -1,7 +1,6 @@
 package Composite;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class ShipmentManager {
@@ -20,6 +19,18 @@ public class ShipmentManager {
         return allShipments.stream()
                 .filter(shipment -> shipment.getId().equalsIgnoreCase(id))
                 .findFirst().orElse(null);
+    }
+    public void searchShipmentById(String id) {
+        ShipmentComponent foundShipment = allShipments.stream()
+                .filter(shipment -> shipment.matchesId(id))
+                .findFirst().orElse(null);
+
+        if (foundShipment != null) {
+            System.out.println("Shipment found:");
+            foundShipment.displayShipmentDetails();
+        } else {
+            System.out.println("No shipment found with the ID: " + id);
+        }
     }
 
 
