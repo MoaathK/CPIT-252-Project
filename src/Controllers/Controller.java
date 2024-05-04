@@ -1,6 +1,7 @@
 package Controllers;
 
-import Model.Shipment;
+import Composite.ShipmentComponent;
+import Composite.ShipmentManager;
 import Views.AdminView;
 import Views.UserView;
 
@@ -12,9 +13,11 @@ public class Controller {
     private UserView view1;
     private AdminView view2;
     Scanner input = new Scanner(System.in);
-    private static final List<Shipment> shipments = new ArrayList<>();
+    private static final List<ShipmentComponent> shipments = new ArrayList<>();
+    private ShipmentManager shipmentManager;
 
     public Controller() {
+        this.shipmentManager = new ShipmentManager();
         this.view1 = new UserView();
         this.view2 = new AdminView();
     }
@@ -27,10 +30,10 @@ public class Controller {
             System.out.println("Are you a 'user' or an 'admin'? Enter your role:");
             String role = input.nextLine();
             if (role.equals("user")){
-                View1();
+                userMenu();
             }
             else if (role.equals("admin")){
-                View2();
+                adminMenu();
             }
             else if (role.equals("0")){
                 System.exit(0);
@@ -42,7 +45,7 @@ public class Controller {
         }
     }
 
-    public void View1(){
+    public void userMenu(){
         boolean flag = true;
         while (flag){
             System.out.println("--- User Menu ---");
@@ -57,19 +60,20 @@ public class Controller {
             input.nextLine();
             switch(choice){
                 case 1:{
-                    view1.userAddShipmentView(shipments);
+                    view1.createShipmentOption(shipmentManager);
                     break;
                 }
                 case 2:{
-                    view1.removeShipment(shipments);
+
+                    view1.removeShipment(shipmentManager);
                     break;
                 }
                 case 3:{
-                    view1.userCheckOrderInfoById(shipments);
+                    view1.searchShipments(shipments);
                     break;
                 }
                 case 4:{
-                    view1.printAllShipments(shipments);
+                    view1.showAllShipments(shipmentManager);
                     break;
                 }
                 case 5:{
@@ -90,7 +94,7 @@ public class Controller {
         }
 
     }
-    public void View2(){
+    public void adminMenu(){
 
         boolean flag = true;
         while (flag){
@@ -103,11 +107,11 @@ public class Controller {
             int choice = Integer.parseInt(input.nextLine());
             switch(choice){
                 case 1:{
-                    view2.updateShipmentStatus(shipments);
+                    view2.updateShipmentStatus(shipmentManager);
                     break;
                 }
                 case 2:{
-                    view1.printAllShipments(shipments);
+                    view1.showAllShipments(shipmentManager);
                     break;
                 }
                 case 3:{
@@ -123,6 +127,7 @@ public class Controller {
             if (answer.equalsIgnoreCase("N")){
                 flag = false;
             }
+        }
     }
-}
+
 }

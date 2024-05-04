@@ -2,9 +2,6 @@ package Model;
 
 
 import Services.ShipmentDetails.OrderContext;
-import Services.ShipmentDetails.ProcessingState;
-
-import java.util.UUID;
 
 public class Shipment {
     private static int lastId = 0;
@@ -14,6 +11,7 @@ public class Shipment {
     private String carrier;
     private double weight;
     public OrderContext context;
+
 
     public Shipment( ) {
         this.id = String.valueOf(++lastId);
