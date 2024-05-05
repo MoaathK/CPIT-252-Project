@@ -23,6 +23,6 @@ public class DeliveredState implements OrderState{
 
     @Override
     public String status() {
-        return "Delivered";
+        return " Delivered";
     }
 }

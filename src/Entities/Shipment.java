@@ -1,4 +1,4 @@
-package Model;
+package Entities;
 
 
 import Services.ShipmentDetails.OrderContext;
@@ -11,7 +11,6 @@ public class Shipment {
     private String carrier;
     private double weight;
     public OrderContext context;
-
 
     public Shipment( ) {
         this.id = String.valueOf(++lastId);

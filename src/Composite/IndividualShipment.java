@@ -1,6 +1,6 @@
 package Composite;
 
-import Model.Shipment;
+import Entities.Shipment;
 import Services.ShipmentDetails.OrderContext;
 
 public class IndividualShipment extends Shipment implements ShipmentComponent{

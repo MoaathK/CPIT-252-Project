@@ -44,4 +44,16 @@ public class ShipmentManager {
             shipment.displayShipmentDetails(); // Display each shipment's details
         }
     }
+    public void displayShipmentBasedOnCarrier(String carrierName){
+        if (allShipments.isEmpty()) {
+            System.out.println("No shipments available to display.");
+            return;
+        }
+        for (ShipmentComponent shipment : allShipments) {
+            if (shipment.matchesSearchCriteria("carrier", carrierName)) {
+                shipment.displayShipmentDetails();
+            }
+        }
+
+    }
 }

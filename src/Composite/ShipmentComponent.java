@@ -10,4 +10,5 @@ public interface ShipmentComponent {
     String getId();
     OrderContext getContext();
     boolean matchesId(String id);
+
 }
