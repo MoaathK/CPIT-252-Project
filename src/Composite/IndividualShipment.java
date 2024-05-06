@@ -6,17 +6,18 @@ import Services.ShipmentDetails.OrderContext;
 public class IndividualShipment extends Shipment implements ShipmentComponent{
 
 
-    public IndividualShipment(double weight, String origin, String destination, String carrier) {
+    public IndividualShipment(double weight, String origin, String destination, String carrier,String phoneNumber) {
         super();
         setWeight(weight);
         setOrigin(origin);
         setDestination(destination);
         setCarrier(carrier);
+        setPhoneNumber(phoneNumber);
     }
     @Override
     public void displayShipmentDetails() {
         System.out.println("{ Shipment ID: "+getId()+", Individual Shipment - Origin: " + getOrigin() +
-                ", Destination: " + getDestination() + ", Weight: " + getWeight() + " kg"+", Carrier: " + getCarrier()+", Shipment Status: "+getContext().getState().status()+" }");
+                ", Destination: " + getDestination() + ", Weight: " + getWeight() + " kg"+", Carrier: " + getCarrier()+", User PhoneNumber: "+getPhoneNumber()+",  Shipment Status: "+getContext().getState().status()+" }");
     }
 
     @Override

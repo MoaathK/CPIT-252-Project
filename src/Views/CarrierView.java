@@ -51,26 +51,6 @@ public class CarrierView {
    }
 
 
-   /* private void removeShipment() {
-        System.out.print("Enter the ID of the shipment to remove: ");
-        String shipmentId = input.nextLine();
-
-        //boolean removed = shipmentManager.removeShipmentById(shipmentId);
-        if (removed) {
-            System.out.println("Shipment removed successfully.");
-        } else {
-            System.out.println("No shipment found with the given ID.");
-        }
-    }*/
-
-
-    private void addNewShipment() {
-        // Implement based on specific requirements
-        // This could involve interacting with `IndividualShipment` or `GroupedShipment`
-        System.out.println("Adding new shipment... (functionality not yet implemented)");
-    }
-
-
     public void updateShipmentStatus(ShipmentManager shipments) {
         System.out.println("What is the ID for the shipment you want to update?");
         String id = input.nextLine();

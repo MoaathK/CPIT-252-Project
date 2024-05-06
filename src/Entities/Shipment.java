@@ -11,6 +11,15 @@ public class Shipment {
     private String carrier;
     private double weight;
     public OrderContext context;
+    private String phoneNumber;
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 
     public Shipment( ) {
         this.id = String.valueOf(++lastId);

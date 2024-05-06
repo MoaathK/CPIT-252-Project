@@ -20,7 +20,7 @@ public class AdminView {
         System.out.println("1. Individual Shipment");
         System.out.println("2. Grouped Shipment");
         int choice = input.nextInt();
-        input.nextLine(); // consume newline
+        input.nextLine();
 
         if (choice == 1) {
             createIndividualShipment(shipments);
@@ -40,7 +40,9 @@ public class AdminView {
         String carrier = input.next();
         System.out.print("Enter weight: ");
         double weight = input.nextDouble();
-        ShipmentComponent shipment = new IndividualShipment(weight,origin,destination,carrier);
+        System.out.print("Enter User Phone Number: ");
+        String phoneNumber = input.next();
+        ShipmentComponent shipment = new IndividualShipment(weight,origin,destination,carrier,phoneNumber);
         shipments.setShipment(shipment);
         shipment.displayShipmentDetails();
     }
