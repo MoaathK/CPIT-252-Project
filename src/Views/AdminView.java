@@ -4,11 +4,13 @@ import Composite.GroupedShipment;
 import Composite.IndividualShipment;
 import Composite.ShipmentComponent;
 import Composite.ShipmentManager;
+import Observer.Observer;
+import Services.ShipmentDetails.OrderState;
 
 import java.util.Scanner;
 
 
-public class AdminView {
+public class AdminView implements Observer {
     static Scanner input = new Scanner(System.in);
     public void showAllShipments(ShipmentManager shipmentManager) {
         System.out.println("Displaying all shipments:");
@@ -72,5 +74,10 @@ public class AdminView {
         } else {
             System.out.println("No shipment found with the given ID.");
         }
+    }
+
+    @Override
+    public void update(OrderState state) {
+        System.out.println("Admin View Updated: New State: " + state.getClass().getSimpleName());
     }
 }

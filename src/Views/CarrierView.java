@@ -2,10 +2,15 @@ package Views;
 
 import Composite.ShipmentComponent;
 import Composite.ShipmentManager;
+import Observer.Observer;
+import Services.ShipmentDetails.CancelledState;
+import Services.ShipmentDetails.DeliveredState;
+import Services.ShipmentDetails.OrderState;
+import Services.ShipmentDetails.ShippedState;
 
 import java.util.Scanner;
 
-public class CarrierView {
+public class CarrierView implements Observer {
     private String carrierName;
     static Scanner input = new Scanner(System.in);
 
@@ -64,15 +69,21 @@ public class CarrierView {
                         "- Cancelled");
                 String type = input.nextLine();
                 switch (type.toLowerCase()) {
-                    case "shipped":
+                    case "shipped": {
                         shipment.getContext().shipOrder();
+                        update(new ShippedState());
                         return;
-                    case "delivered":
+                    }
+                    case "delivered":{
                         shipment.getContext().deliverOrder();
+                        update(new DeliveredState());
                         return;
-                    case "cancelled":
+                    }
+                    case "cancelled": {
                         shipment.getContext().cancelOrder();
+                        update(new CancelledState());
                         return;
+                    }
                     default:
                         System.out.println("Invalid type, please try again.");
                 }
@@ -89,4 +100,8 @@ public class CarrierView {
     }
 
 
+    @Override
+    public void update(OrderState state) {
+        System.out.println("New State: " + state.status());
+    }
 }

@@ -2,6 +2,7 @@ package Controllers;
 
 import Composite.ShipmentComponent;
 import Composite.ShipmentManager;
+import Services.ShipmentDetails.OrderContext;
 import Views.CarrierView;
 import Views.AdminView;
 
@@ -15,11 +16,15 @@ public class Controller {
     Scanner input = new Scanner(System.in);
     private static final List<ShipmentComponent> shipments = new ArrayList<>();
     private ShipmentManager shipmentManager;
-
+    private OrderContext orderContext;
     public Controller() {
         this.shipmentManager = new ShipmentManager();
         this.view1 = new AdminView();
         this.view2 = new CarrierView();
+        orderContext = new OrderContext();
+        orderContext.attach(view1);
+        orderContext.attach(view2);
+
     }
     public void view0 (){
         while (true){
