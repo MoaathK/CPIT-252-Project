@@ -36,6 +36,7 @@ public class Controller {
             String role = input.nextLine();
             if (role.equalsIgnoreCase("Admin")){
                 adminMenu();
+                orderContext.notifyObservers();
             }
             else if (role.equalsIgnoreCase("Carrier")){
                 view2.carrierMenu(shipmentManager);

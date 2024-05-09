@@ -78,6 +78,6 @@ public class AdminView implements Observer {
 
     @Override
     public void update(OrderState state) {
-        System.out.println("Admin View Updated: New State: " + state.getClass().getSimpleName());
+        System.out.println("Admin status for shipment Changed" );
     }
 }

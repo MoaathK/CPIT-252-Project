@@ -102,6 +102,6 @@ public class CarrierView implements Observer {
 
     @Override
     public void update(OrderState state) {
-        System.out.println("New State: " + state.status());
+        System.out.println("Carrier status for shipment Has Changed\n");
     }
 }
