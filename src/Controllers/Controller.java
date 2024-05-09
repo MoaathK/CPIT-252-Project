@@ -28,7 +28,6 @@ public class Controller {
     }
     public void view0 (){
         while (true){
-
             System.out.println("welcome to the Transport Management System (TMS)\n"
                                 +"----Main Menu-----");
             System.out.println("Type ( 0 ) to Exit ");
