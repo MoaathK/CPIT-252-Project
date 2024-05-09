@@ -3,6 +3,7 @@ This repository contains the work on the CPIT-252 Course Project that will cover
 - State Pattern
 - Composite Pattern
 - Builder Pattern
+- Observer Pattern
 - MVC
 ## Group Members
 - [Moath Alahmadi](https://github.com/MoaathK)
