@@ -100,40 +100,8 @@ public class Controller {
         }
 
     }
-    public void carrierMenu(){
 
-        boolean flag = true;
-        while (flag){
-            System.out.println("--- Carrier Menu ---");
-            System.out.println("1. Update shipment Status ");
-            System.out.println("2. See All shipments");
-            System.out.println("3. Return to Main Menu");
 
-            System.out.println("Enter your choice");
-            int choice = Integer.parseInt(input.nextLine());
-            switch(choice){
-                case 1:{
-                    view2.updateShipmentStatus(shipmentManager);
-                    break;
-                }
-                case 2:{
-                    view1.showAllShipments(shipmentManager);
-                    break;
-                }
-                case 3:{
-                    System.out.println("Returning to Main Menu");
-                    return;
-                }
-                default:{
-                    System.out.println("Invalid Option, Please enter a valid choice");
-                }
-            }
-            System.out.println("Want to see the Carrier menu again? (Y/N)");
-            String answer = input.nextLine();
-            if (answer.equalsIgnoreCase("N")){
-                flag = false;
-            }
-        }
-    }
+
 
 }
